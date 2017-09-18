@@ -41,10 +41,10 @@
   </div>
   <div class="datepicker-calendar" *ngIf="opened">
     <div class="datepicker-calendar-top">
-      <span class="year-title">{{ currentDate.format('YYYY') }}</span>
-      <button type="button" (click)="openYearPicker()" *ngIf="!yearPicker">
-        {{options.selectYearText}}
-      </button>
+      <span class="year-title month">{{ currentDate.format('MMM') }}</span>
+      <span class="year-title date">{{ currentDate.format('D') }}</span>
+      <span class="year-title year">{{ currentDate.format('YYYY') }}</span>
+
       <i class="close" (click)="close()">
         <svg width="350px" height="349px" viewBox="-1 0 350 349" version="1.1">
           <g id="delete" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -54,6 +54,12 @@
       </i>
     </div>
     <div class="datepicker-calendar-container">
+
+      <span class="year-title">{{ currentDate.format('YYYY') }}</span>
+      <button type="button" (click)="openYearPicker()" *ngIf="!yearPicker">
+        {{options.selectYearText}}
+      </button>
+
       <div *ngIf="!yearPicker">
         <div class="datepicker-calendar-month-section">
           <i (click)="prevMonth()">

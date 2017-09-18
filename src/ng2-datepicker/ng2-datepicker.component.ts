@@ -243,6 +243,8 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
         }
       });
     }
+
+    this.open();
   }
 
   generateCalendar() {
