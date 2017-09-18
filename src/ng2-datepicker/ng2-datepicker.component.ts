@@ -114,7 +114,9 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   currentDate: moment.Moment;
   days: CalendarDate[];
   years: number[];
+  months: string[];
   yearPicker: boolean;
+  monthPicker: boolean;
   scrollOptions: SlimScrollOptions;
   nameOfweekday(index: number): string{
     let locale = (this.options && this.options.locale)? this.options.locale : "en";
@@ -134,6 +136,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     this.options = this.options || {};
     this.days = [];
     this.years = [];
+    this.months = [];
     this.date = new DateModel({
       day: null,
       month: null,
@@ -197,6 +200,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
       this.maxDate = null;
     }
 
+    this.generateMonths();
     this.generateYears();
     this.generateCalendar();
     this.outputEvents.emit({ type: 'default', data: 'init' });
@@ -320,11 +324,36 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
         day: date.format('DD'),
         month: date.format('MM'),
         year: date.format('YYYY'),
-        formatted: date.lang(this.options.locale).format(this.options.format),
+        formatted: date.locale(this.options.locale).format(this.options.format),
         momentObj: date
       };
       this.yearPicker = false;
       this.generateCalendar();
+    });
+  }
+
+  selectMonth(e: MouseEvent, month: number) {
+    e.preventDefault();
+
+    setTimeout(() => {
+      const date: moment.Moment = this.currentDate.month(month);
+      this.value = {
+        day: date.format('DD'),
+        month: date.format('MM'),
+        year: date.format('YYYY'),
+        formatted: date.locale(this.options.locale).format(this.options.format),
+        momentObj: date
+      };
+      this.monthPicker = false;
+      this.generateCalendar();
+    });
+  }
+
+
+  generateMonths() {
+    const months = moment.months();
+    months.map(m => {
+      this.months.push(m.substr(0, 3).toUpperCase());
     });
   }
 
@@ -392,6 +421,10 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 
   openYearPicker() {
     setTimeout(() => this.yearPicker = true);
+  }
+
+  openMonthPicker() {
+    setTimeout(() => this.monthPicker = true);
   }
 
   clear() {
