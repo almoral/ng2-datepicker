@@ -48,6 +48,7 @@ export interface IDatePickerOptions {
   firstWeekdaySunday?: boolean;
   format?: string;
   selectYearText?: string;
+  selectMonthText?: string;
   todayText?: string;
   clearText?: string;
 }
@@ -62,6 +63,7 @@ export class DatePickerOptions {
   firstWeekdaySunday?: boolean;
   format?: string;
   selectYearText?: string;
+  selectMonthText?: string;
   todayText?: string;
   clearText?: string;
 
@@ -75,6 +77,7 @@ export class DatePickerOptions {
     this.firstWeekdaySunday = obj && obj.firstWeekdaySunday ? obj.firstWeekdaySunday : false;
     this.format = obj && obj.format ? obj.format : 'YYYY-MM-DD';
     this.selectYearText = obj && obj.selectYearText ? obj.selectYearText : 'Select Year';
+    this.selectMonthText = obj && obj.selectMonthText ? obj.selectMonthText : 'Select Month';
     this.todayText = obj && obj.todayText ? obj.todayText : 'Today';
     this.clearText = obj && obj.clearText ? obj.clearText : 'Clear';
   }
