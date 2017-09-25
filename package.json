@@ -1,6 +1,6 @@
 {
   "name": "mdc-date",
-  "version": "1.8.3",
+  "version": "1.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
