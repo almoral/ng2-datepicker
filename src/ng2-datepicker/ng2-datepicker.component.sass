@@ -14,6 +14,11 @@ $materialDarkBlue: #007ac1
   -ms-user-select: none
   user-select: none
 
+=centered-block
+  display: block
+  text-align: center
+
+
 .datepicker-container
   display: inline-block
   position: relative
@@ -73,7 +78,7 @@ $materialDarkBlue: #007ac1
       position: relative
 
       .year-title
-        display: block
+        +centered-block
         margin-top: 12px
         color: $white
         font-size: 28px
@@ -141,12 +146,12 @@ $materialDarkBlue: #007ac1
       background: $white
 
       .select-year
+        +centered-block
         color: $materialDarkBlue
-        text-align: center
 
       .year-title
         //font-weight: 600
-        text-align: center
+        +centered-block
 
       .datepicker-calendar-month-section
         width: 100%
