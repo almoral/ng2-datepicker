@@ -56,7 +56,7 @@
     <div class="datepicker-calendar-container">
 
       <span class="year-title">{{ currentDate.format('YYYY') }}</span>
-      <a href="#" class="select-year" (click)="openYearPicker()" *ngIf="!yearPicker && !monthPicker">
+      <a class="select-year" (click)="openYearPicker()" *ngIf="!yearPicker && !monthPicker">
         {{options.selectYearText}}
       </a>
 
@@ -78,7 +78,7 @@
           <!--<a href="#" class="select-year" (click)="openYearPicker()" *ngIf="!yearPicker">-->
             <!---->
           <!--</a>-->
-          <a href="#" class="select-year" (click)="openMonthPicker()" *ngIf="!monthPicker || !yearPicker">
+          <a class="select-year" (click)="openMonthPicker()" *ngIf="!monthPicker || !yearPicker">
             {{options.selectMonthText}}
           </a>
           </div>
