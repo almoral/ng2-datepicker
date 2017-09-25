@@ -1,5 +1,5 @@
 {
-  "name": "ng2-datepicker",
+  "name": "mdc-date",
   "version": "1.8.3",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkuri/ng2-datepicker.git"
+    "url": "https://github.com/almoral/ng2-datepicker.git"
   },
   "keywords": [
     "angular",
@@ -32,7 +32,7 @@
   ],
   "author": "Jan Kuri <jkuri88@gmail.com>",
   "bugs": {
-    "url": "https://github.com/jkuri/ng2-datepicker/issues"
+    "url": "https://github.com/almoral/ng2-datepicker/issues"
   },
   "homepage": "https://github.com/jkuri/ng2-datepicker#readme",
   "main": "./lib-dist/ng2-datepicker.module.js",
